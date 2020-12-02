@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>New user</title>
+</head>
+<body>
+<div>
+    <h1> New user</h1>
+    <div>
+        <div>
+            <div>
+                <form action="#" th:action="@{/createUser}" th:object="${user}"
+                      method="post">
+                    <div>
+                        <div>
+                            <label for="firstName">
+                                First Name
+                            </label>
+                            <input type="text" th:field="*{firstName}"
+                                   id="firstName" placeholder="firstName"/>
+                        </div>
+                        <div>
+                            <label for="lastName">Last Name</label>
+                            <input type="text" th:field="*{lastName}"
+                                   id="lastName" placeholder="lastName"/>
+                        </div>
+
+                        <div>
+                            <label for="age">
+                                Age
+                            </label>
+                            <input type="text" th:field="*{age}"
+                                   id="age" placeholder="age"/>
+                        </div>
+                        <div>
+                            <label for="email">
+                                Email
+                            </label>
+                            <input type="text" th:field="*{email}"
+                                   id="email" placeholder="@email"/>
+                        </div>
+                        <div>
+                            <label for="password">
+                                Password
+                            </label>
+                            <input type="text" th:field="*{password}"
+                                   id="password" placeholder="password"/>
+                        </div>
+                        <div>
+                            <label>
+                                Role
+                            </label>
+                            <select multiple size="2" th:field="${user.roles}"
+                                    id="dropOperator">
+                                <option value="1">Admin</option>
+                                <option value="2">User</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="submit" value=" Submit ">
+                        </div>
+                        <input type="hidden" id="id" th:field="*{id}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
